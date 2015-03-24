@@ -1,8 +1,10 @@
+.. _Django ORM queries: https://docs.djangoproject.com/en/1.7/topics/db/queries/#retrieving-specific-objects-with-filters
 
 pandas-dfquery
 --------------
 
-Provides keyword-style queries on Pandas DataFrames -- see examples
+
+Provides keyword-style queries on Pandas DataFrames -- see examples. Inspired by `Django ORM queries`_
 below.
 
 Why?
@@ -44,11 +46,10 @@ Tutorial
     df
 
 
-
 .. raw:: html
 
     <div style="max-height:1000px;max-width:1500px;overflow:auto;">
-    <table border="1" class="dataframe">
+1.     <table border="1" class="dataframe">
       <thead>
         <tr style="text-align: right;">
           <th></th>
@@ -1325,5 +1326,4 @@ Tutorial
       </tbody>
     </table>
     </div>
-
 
