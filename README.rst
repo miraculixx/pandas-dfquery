@@ -4,8 +4,8 @@ pandas-dfquery
 --------------
 
 
-Provides keyword-style queries on Pandas DataFrames -- see examples. Inspired by `Django ORM queries`_
-below.
+Provides keyword-style queries on Pandas DataFrames -- see examples below. Inspired by `Django ORM queries`_
+
 
 Why?
 ----
