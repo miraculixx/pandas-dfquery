@@ -11,7 +11,7 @@ setup(
     name=dfquery.__name__,
     version=dfquery.__version__,
     description='pandas-dfquery',
-    long_description=open('README.md').read(),
+    long_description=open('README.rst').read(),
     author='Patrick Senti',
     author_email='miraculixx@gmx.ch',
     url='https://github.com/miraculixx/pandas-dfquery',
