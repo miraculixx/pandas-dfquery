@@ -1,5 +1,3 @@
-import dfquery
-
 __author__ = 'Patrick Senti <miraculixx@gmx.ch>'
 
 try:
@@ -8,8 +6,8 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name=dfquery.__name__,
-    version=dfquery.__version__,
+    name='pandas-dfquery',
+    version='0.1.1-dev',
     description='pandas-dfquery',
     long_description=open('README.rst').read(),
     author='Patrick Senti',
