@@ -22,6 +22,8 @@ class Q(object):
     gte    >=
     ne     <>
     not    <>
+    in     isin(v) 
+    isin   isin(v)
     
     string operators
     
@@ -98,9 +100,11 @@ class Q(object):
             elif op == 'gte':
                 cond &= (df[k] >= v)
             elif op == 'ne':
-                cond &= (df[k] <> v)
+                cond &= (df[k] != v)
             elif op == 'not':
-                cond &= (df[k] <> v)
+                cond &= (df[k] != v)
+            elif op in ['in', 'isin']:
+                cond &= (df[k].isin(v))
             # string processing
             elif op == 'isalnum':
                 cond &= (df[k].str.isalnum()) if v else ~(df[k].str.isalnum())

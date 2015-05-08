@@ -19,7 +19,7 @@ setup(
     package_dir={'dfquery': 'dfquery'},
     packages=['dfquery'],
     test_suite='tests',
-    install_requires=['pandas>=0.12'],
+    install_requires=['pandas>=0.12', 'six>=1.9.0'],
     classifiers=(
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',

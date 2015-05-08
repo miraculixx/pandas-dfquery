@@ -8,7 +8,7 @@ class Filter(object):
     
     direct filtering
         filter = Filter(df, year=2015)
-        filter.df
+        filter.value
         
     filtering with Q objects
         q = Q(year=2015)
@@ -42,6 +42,9 @@ class Filter(object):
     @property
     def query(self):
         return self.q
+    
+    def count(self):
+        return len(self.value.index)
         
     @property
     def value(self):
@@ -59,7 +62,7 @@ class Filter(object):
         return self
         
     def exclude(self, query=None, **kwargs):
-        self.q &= self.build_query(query, **kwargs)
+        self.q &= ~self.build_query(query, **kwargs)
         return self
             
     def evalulate(self):
