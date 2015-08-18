@@ -1,11 +1,10 @@
-.. _Django ORM queries: https://docs.djangoproject.com/en/1.7/topics/db/queries/#retrieving-specific-objects-with-filters
-
 pandas-dfquery
 --------------
 
+.. _Django ORM queries: https://docs.djangoproject.com/en/1.7/topics/db/queries/#retrieving-specific-objects-with-filters
+
 
 Provides keyword-style queries on Pandas DataFrames -- see examples below. Inspired by `Django ORM queries`_
-
 
 Why?
 ----
@@ -28,6 +27,12 @@ and wish you could instead write:
 
     df.query(YEAR=2015, MONTH=1)
     df.query(PRODUCT__contains='Fab')
+    # query for null values straight forward 
+    df.query(YEAR__isnone=True)
+    df.query(YEAR__isnone=False)
+    # use string functions
+    df.query(PRODUCT__islower=True)
+    df.query(PRODUCT__isupper=False)
 
 Then pandas-dfquery is for you. See the tutorial below.
 
@@ -70,4 +75,29 @@ Tutorial
     df.query(~Q(Name__contains='versicolor') & ~Q(Name__contains='setosa'))
     df.query(SepalLength=5.8)
     df.value
+    
+.. code:: python
 
+   # use an existing data frame
+   df = pd.DataFrame(...)
+   dfsubset = Filter(df, Name__contains='versicolor').value
+   # or use q objects as before
+   dfsubset = Filter(df, ~Q(Name__contains='versicolor') & ~Q(Name__contains='setosa'))
+
+
+Development
+-----------
+
+Installation
+++++++++++++
+
+.. code:: python
+
+   $ pip install -r requirements.txt
+
+Running unit tests
+++++++++++++++++++
+
+.. code:: 
+
+   $ python -m unittest discover

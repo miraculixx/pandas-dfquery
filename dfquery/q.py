@@ -130,6 +130,8 @@ class Q(object):
                 cond &= (df[k].str.istitle()) if v else ~(df[k].str.istitle())
             elif op == 'isnumeric':
                 cond &= (df[k].str.isnumeric()) if v else ~(df[k].str.numeric())
+            elif op in ['isnone', 'isnull']:
+                cond &= (df[k].isnull()) if v else ~(df[k].isnull())
             else:
                 raise SyntaxError('Invalid operator %s on field %s' % (op, k))
         return ~cond if self._inv else cond
