@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='pandas-dfquery',
-    version='0.1.1-dev',
+    version='0.1.2-dev',
     description='pandas-dfquery',
     long_description=open('README.rst').read(),
     author='Patrick Senti',
